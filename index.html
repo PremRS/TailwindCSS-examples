@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Tailwind CSS Sandbox</title>
+    <script>
+      window.onload = function () {
+        let ANCHOR_CLASS = "text-blue-500 hover:text-blue-300";
+        let LIST_CLASS = "text-lg border border-blue-200 p-2 my-4";
+        let TARGET = "iframe-content";
+
+        const EXAMPLES_LIST = [
+          {
+            title: "Utility First Example",
+            path: "01-utility-first",
+          },
+          {
+            title: "Colors",
+            path: "02-colors",
+          },
+          {
+            title: "Container & Spacing",
+            path: "03-container-spacing",
+          },
+          {
+            title: "Typography",
+            path: "04-typography",
+          },
+          {
+            title: "Sizing",
+            path: "05-sizing",
+          },
+          {
+            title: "Layout & Position",
+            path: "06-layout-position",
+          },
+          {
+            title: "Background & Shadows",
+            path: "07-backgrounds-shadows",
+          },
+          {
+            title: "Borders",
+            path: "08-borders",
+          },
+          {
+            title: "Filters",
+            path: "09-filters",
+          },
+          {
+            title: "Interactivity",
+            path: "10-interactivity",
+          },
+          {
+            title: "Breakpoints",
+            path: "11-breakpoints",
+          },
+          {
+            title: "Column Layouts",
+            path: "12-columns",
+          },
+          {
+            title: "Flexbox",
+            path: "13-flex",
+          },
+          {
+            title: "Grid",
+            path: "14-grid",
+          },
+          {
+            title: "Transform & Transition",
+            path: "15-transform-transition",
+          },
+          {
+            title: "Animation",
+            path: "16-animation",
+          },
+          {
+            title: "Customization & Config",
+            path: "17-customization",
+          },
+          {
+            title: "Dark Mode",
+            path: "18-dark-mode/index.html",
+          },
+        ];
+
+        EXAMPLES_LIST.forEach((example) => {
+          let listContainer = document.getElementById("list-container");
+
+          let listElement = document.createElement("li");
+          let anchorElement = document.createElement("a");
+
+          listElement.className = LIST_CLASS;
+
+          anchorElement.className = ANCHOR_CLASS;
+          anchorElement.innerHTML = example.title;
+          anchorElement.href = example.path + "/index.html";
+          anchorElement.target = TARGET;
+
+          listElement.appendChild(anchorElement);
+          listContainer.appendChild(listElement);
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <div class="flex justify-around">
+      <div class="bg-gray-50 h-full w-1/2 p-6">
+        <h1 class="text-3xl text-blue-800">Tailwind CSS Sandbox</h1>
+        <ul class="mt-6" id="list-container"></ul>
+      </div>
+      <div class="w-1/2 p-6 h-full">
+        <iframe
+          class="w-full h-screen"
+          name="iframe-content"
+          frameborder="0"
+        ></iframe>
+      </div>
+    </div>
+  </body>
+</html>
